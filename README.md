@@ -12,3 +12,5 @@ Inorder Traversal - start from the base of the left subtree, cover each level of
 Postorder Traversal - cover all subtrees from base up and then left to right, finally, visit the root node
 
 Levelorder Traveral - traverse the tree by level, left to right
+
+For traversal's we will either use a queue for breadth-first search or a stack for depth-first search
