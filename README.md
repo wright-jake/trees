@@ -13,4 +13,8 @@ Postorder Traversal - cover all subtrees from base up and then left to right, fi
 
 Levelorder Traveral - traverse the tree by level, left to right
 
-For traversal's we will either use a queue for breadth-first search or a stack for depth-first search
+There are two general strategies for traversing trees:
+
+Breadth First Search (BFS), using a queue data structure, we scan through the tree level by level, following the order of height from top to bottom, we normally use this for levelorder traversal
+
+Depth First Search (DFS), using a stack data structure, we adopt depth as the priority, starting at the root and reaching all the way down to a certain leaf, then back to the root to reach another branch, we normally use this for preorder, inorder and postorder traversal
