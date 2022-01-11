@@ -1,6 +1,8 @@
 # trees
 A collection of LeetCode solutions for tree questions
 
+A tree is a frequently-used data structure to stimulate a hierachical tree structure, each node of the tree will have a root value and a list of references to other nodes (which we call child nodes)
+
 A binary tree is a rooted tree in which each node has no more than 2 children, if a tree is a rooted tree in which each node has no more than N children - it is called an N-ary tree
 
 There are four traversal methods for trees:
