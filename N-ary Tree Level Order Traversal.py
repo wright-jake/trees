@@ -12,6 +12,39 @@ class Node:
 
 class Solution:
     def levelOrder(self, root: 'Node') -> List[List[int]]:
+        
+        #recursive solution
+        
+        #check to see if tree has any nodes
+        if root is None:
+            return []
+        
+        #levelorder traversal: level by level (top - bottom)
+        result = []
+        
+        #create recursive function
+        def solve(node, level):
+            
+            #start the current level
+            if len(result) == level:
+                result.append([])
+            
+            #add the current node in that level
+            result[level].append(node.val)
+            
+            #then run function again but for the next level
+            for child in node.children:
+                solve(child, level + 1)
+        
+        #start from the root (level 0)
+        solve(root, 0)
+        
+        #return nodes in levelorder
+        return result
+        
+        
+        #iterative solution
+        
         #check to see if tree has any nodes
         if root is None:
             return []
