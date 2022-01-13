@@ -11,6 +11,18 @@ root = [1,null,2,3]
 class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         
+        #recursive solution
+        
+        #if tree is empty then we cannot traverse anything
+        if root is None:
+            return []
+        
+        #preorder traversal: root, left, right
+        return [root.val] + self.preorderTraversal(root.left) + self.preorderTraversal(root.right)
+        
+        
+        #iterative solution
+        
         #if tree is empty then we cannot traverse anything
         if root is None:
             return []
