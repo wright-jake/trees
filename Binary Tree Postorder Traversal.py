@@ -10,6 +10,19 @@ root = [1,null,2,3]
 #         self.right = right
 class Solution:
     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        
+        #recursive solution
+        
+        #if tree is empty then we cannot traverse anything
+        if root is None:
+            return []
+        
+        #inorder traversal: left, root, right
+        return self.postorderTraversal(root.left) + self.postorderTraversal(root.right) + [root.val]
+        
+        
+        #iterative solution
+        
         #create a stack to store our tree
         stack = [root]
         
