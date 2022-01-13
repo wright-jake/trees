@@ -12,6 +12,39 @@ class Node:
 
 class Solution:
     def postorder(self, root: 'Node') -> List[int]:
+        
+        #recursive solution
+        
+        #if there is no tree then we cannot traverse
+        if root is None:
+            return []
+        
+        #postorder travel: left -> right -> root
+        result = []
+        
+        #create recursive function
+        def solve(root):
+            
+            #for loop ensures we reach every child
+            for child in root.children:
+                
+                #search for children first 
+                solve(child)
+                
+                #then add parent node
+                result.append(child.val)
+        
+        #call recursive function to start traversal
+        solve(root)
+        
+        #add root node last
+        result.append(root.val)
+        
+        #return nodes in postorder
+        return result
+        
+        #iterative solution
+        
         #if there is no tree then we cannot traverse
         if root is None:
             return []
