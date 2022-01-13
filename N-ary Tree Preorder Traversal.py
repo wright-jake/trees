@@ -5,6 +5,36 @@ root = [1,null,3,2,4,null,5,6]
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
         
+        #recursive solution
+        
+        #if there is no tree then we cannot traverse
+        if root is None:
+            return []
+        
+        #preorder traversal: root -> left -> right
+        result = [root.val]
+        
+        #create recursive function
+        def solve(root):
+            
+            #for loop ensures we reach every child
+            for child in root.children:
+                
+                #add child nodes to result array
+                result.append(child.val)
+                
+                #call recursive function to add children
+                solve(child)
+        
+        #call recursive function to start traversal
+        solve(root)
+        
+        #return nodes in preorder
+        return result
+        
+        
+        #iterative solution
+        
         #if there is no tree then we cannot traverse
         if root is None:
             return []
