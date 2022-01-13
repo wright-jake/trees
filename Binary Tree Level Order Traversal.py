@@ -10,6 +10,40 @@ root = [3,9,20,null,null,15,7]
 #         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        #recursive solution
+     
+        #array to store each level
+        levels = []
+        
+        #if no tree then we cannot traverse any nodes
+        if root is None:
+            return levels
+        
+        def helper(node, level):
+            
+            #start the current level
+            if len(levels) == level:
+                levels.append([])
+            
+            #add the current node in to that level
+            levels[level].append(node.val)
+            
+            #then run function again for child nodes (next level)
+            if node.left:
+                helper(node.left, level + 1)
+            if node.right:
+                helper(node.right, level + 1)
+        
+        #start from the top of the tree (level 0)
+        helper(root, 0)
+        
+        #return nodes in level order
+        return levels
+    
+        
+        
+        #iterative solution
+        
         #if no tree then we cannot traverse any nodes
         if root is None:
             return []
